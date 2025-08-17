@@ -1,0 +1,368 @@
+{
+  "ai_visibility_scorecard": {
+    "current_scores": {
+      "ChatGPT": {
+        "overall_score": 54,
+        "brand_recognition": 8,
+        "market_score": 6,
+        "presence_quality": 20,
+        "brand_sentiment": 9,
+        "share_of_voice": 30
+      },
+      "Real_Time_AI": {
+        "overall_score": 70,
+        "brand_recognition": 13,
+        "market_score": 10,
+        "presence_quality": 20,
+        "brand_sentiment": 15,
+        "share_of_voice": 25
+      },
+      "Gemini_AI": {
+        "overall_score": 50,
+        "brand_recognition": 5,
+        "market_score": 3,
+        "presence_quality": 20,
+        "brand_sentiment": 9,
+        "share_of_voice": 26
+      }
+    },
+    "trend_data": [
+      {
+        "month": "Jan 2025",
+        "ChatGPT": 52,
+        "Real_Time_AI": 68,
+        "Gemini_AI": 48
+      },
+      {
+        "month": "Feb 2025",
+        "ChatGPT": 53,
+        "Real_Time_AI": 69,
+        "Gemini_AI": 49
+      },
+      {
+        "month": "Mar 2025",
+        "ChatGPT": 54,
+        "Real_Time_AI": 70,
+        "Gemini_AI": 50
+      },
+      {
+        "month": "Apr 2025",
+        "ChatGPT": 55,
+        "Real_Time_AI": 71,
+        "Gemini_AI": 51
+      },
+      {
+        "month": "May 2025",
+        "ChatGPT": 56,
+        "Real_Time_AI": 72,
+        "Gemini_AI": 52
+      }
+    ]
+  },
+  "content_performance": {
+    "content_pieces": [
+      {
+        "title": "Global Payroll Solutions Overview",
+        "ai_mentions": 45,
+        "platforms": [
+          "ChatGPT",
+          "Gemini"
+        ],
+        "performance": "High"
+      },
+      {
+        "title": "NeeyamoWorks Platform Features",
+        "ai_mentions": 38,
+        "platforms": [
+          "Real_Time_AI",
+          "ChatGPT"
+        ],
+        "performance": "High"
+      },
+      {
+        "title": "Compliance and Risk Management",
+        "ai_mentions": 42,
+        "platforms": [
+          "All"
+        ],
+        "performance": "High"
+      },
+      {
+        "title": "EOR Services Guide",
+        "ai_mentions": 28,
+        "platforms": [
+          "Real_Time_AI"
+        ],
+        "performance": "Medium"
+      },
+      {
+        "title": "Payroll Automation Benefits",
+        "ai_mentions": 35,
+        "platforms": [
+          "ChatGPT",
+          "Gemini"
+        ],
+        "performance": "Medium"
+      },
+      {
+        "title": "Multi-country Payroll Setup",
+        "ai_mentions": 22,
+        "platforms": [
+          "Gemini"
+        ],
+        "performance": "Low"
+      }
+    ],
+    "gap_analysis": [
+      {
+        "topic": "AI-driven payroll analytics",
+        "competitor_mentions": 65,
+        "neeyamo_mentions": 12,
+        "opportunity_score": 85
+      },
+      {
+        "topic": "Real-time payroll processing",
+        "competitor_mentions": 48,
+        "neeyamo_mentions": 18,
+        "opportunity_score": 70
+      },
+      {
+        "topic": "Employee self-service portals",
+        "competitor_mentions": 52,
+        "neeyamo_mentions": 15,
+        "opportunity_score": 75
+      },
+      {
+        "topic": "Mobile payroll applications",
+        "competitor_mentions": 38,
+        "neeyamo_mentions": 8,
+        "opportunity_score": 65
+      }
+    ]
+  },
+  "competitor_benchmarking": {
+    "market_share": {
+      "ChatGPT": [
+        {
+          "company": "ADP",
+          "share": 25,
+          "score": 72
+        },
+        {
+          "company": "Ceridian",
+          "share": 20,
+          "score": 68
+        },
+        {
+          "company": "Neeyamo",
+          "share": 15,
+          "score": 54
+        },
+        {
+          "company": "Workday",
+          "share": 10,
+          "score": 65
+        },
+        {
+          "company": "Paychex",
+          "share": 10,
+          "score": 58
+        }
+      ],
+      "Real_Time_AI": [
+        {
+          "company": "Neeyamo",
+          "share": 28.5,
+          "score": 70
+        },
+        {
+          "company": "ADP",
+          "share": 20,
+          "score": 68
+        },
+        {
+          "company": "Papaya Global",
+          "share": 14,
+          "score": 65
+        },
+        {
+          "company": "Deel",
+          "share": 12,
+          "score": 72
+        },
+        {
+          "company": "Multiplier",
+          "share": 8,
+          "score": 60
+        }
+      ],
+      "Gemini_AI": [
+        {
+          "company": "Neeyamo",
+          "share": 25,
+          "score": 50
+        },
+        {
+          "company": "ADP",
+          "share": 20,
+          "score": 62
+        },
+        {
+          "company": "Papaya Global",
+          "share": 15,
+          "score": 58
+        },
+        {
+          "company": "Deel",
+          "share": 12,
+          "score": 65
+        },
+        {
+          "company": "Remote",
+          "share": 5,
+          "score": 55
+        }
+      ]
+    },
+    "competitive_keywords": [
+      {
+        "keyword": "global payroll services",
+        "neeyamo_rank": 3,
+        "top_competitor": "ADP",
+        "competitor_rank": 1
+      },
+      {
+        "keyword": "international hr outsourcing",
+        "neeyamo_rank": 2,
+        "top_competitor": "Deel",
+        "competitor_rank": 1
+      },
+      {
+        "keyword": "payroll compliance automation",
+        "neeyamo_rank": 4,
+        "top_competitor": "ADP",
+        "competitor_rank": 1
+      },
+      {
+        "keyword": "employer of record services",
+        "neeyamo_rank": 5,
+        "top_competitor": "Remote",
+        "competitor_rank": 1
+      }
+    ]
+  },
+  "aeo_optimization": {
+    "current_metrics": {
+      "faq_schema_implementation": 65,
+      "nlp_friendliness": 72,
+      "structured_data_coverage": 58,
+      "content_authority_score": 74,
+      "citation_frequency": 42
+    },
+    "optimization_recommendations": [
+      {
+        "category": "Schema Implementation",
+        "priority": "High",
+        "impact": "25% visibility increase",
+        "action": "Implement FAQ schema on 15 key service pages",
+        "timeline": "2-4 weeks",
+        "cost": "$2,000"
+      },
+      {
+        "category": "Content Structure",
+        "priority": "High",
+        "impact": "20% visibility increase",
+        "action": "Restructure content with clear Q&A format",
+        "timeline": "4-6 weeks",
+        "cost": "$5,000"
+      },
+      {
+        "category": "Authority Building",
+        "priority": "Medium",
+        "impact": "15% visibility increase",
+        "action": "Create industry-specific case studies",
+        "timeline": "6-8 weeks",
+        "cost": "$8,000"
+      }
+    ]
+  },
+  "financial_model": {
+    "assumptions": {
+      "monthly_aeo_investment": 5000,
+      "current_monthly_leads": 50,
+      "lead_to_opportunity_rate": 15,
+      "opportunity_to_customer_rate": 25,
+      "average_contract_value": 50000,
+      "customer_lifetime_years": 3,
+      "gross_margin_percent": 80
+    },
+    "scenarios": [
+      {
+        "name": "Conservative",
+        "visibility_increase": 15,
+        "lead_increase": 20,
+        "monthly_new_customers": 2.5,
+        "monthly_revenue": 125000,
+        "monthly_profit": 95000,
+        "roi_12_months": 190
+      },
+      {
+        "name": "Moderate",
+        "visibility_increase": 25,
+        "lead_increase": 35,
+        "monthly_new_customers": 4.2,
+        "monthly_revenue": 210000,
+        "monthly_profit": 163000,
+        "roi_12_months": 326
+      },
+      {
+        "name": "Optimistic",
+        "visibility_increase": 40,
+        "lead_increase": 55,
+        "monthly_new_customers": 6.9,
+        "monthly_revenue": 345000,
+        "monthly_profit": 271000,
+        "roi_12_months": 542
+      }
+    ],
+    "payback_analysis": [
+      {
+        "month": 1,
+        "investment": 5000,
+        "revenue": 0,
+        "cumulative_profit": -5000
+      },
+      {
+        "month": 2,
+        "investment": 5000,
+        "revenue": 25000,
+        "cumulative_profit": 15000
+      },
+      {
+        "month": 3,
+        "investment": 5000,
+        "revenue": 50000,
+        "cumulative_profit": 60000
+      },
+      {
+        "month": 6,
+        "investment": 5000,
+        "revenue": 125000,
+        "cumulative_profit": 315000
+      },
+      {
+        "month": 12,
+        "investment": 5000,
+        "revenue": 210000,
+        "cumulative_profit": 1260000
+      }
+    ]
+  },
+  "market_context": {
+    "global_payroll_market_size_2025": 26.6,
+    "projected_market_size_2033": 38.24,
+    "market_growth_rate": 4.56,
+    "neeyamo_target_market_share": 2.5,
+    "addressable_market_value": 665000000
+  }
+}
