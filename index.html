@@ -3,387 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neeyamo AEO Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Operations Case Analysis Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .active-tab {
+            border-bottom: 3px solid var(--accent);
+            color: var(--accent);
+        }
+    </style>
 </head>
-<body>
-    <div class="dashboard-container">
-        <header class="dashboard-header">
-            <div class="container">
-                <h1 class="dashboard-title">Neeyamo AEO Dashboard</h1>
-                <p class="dashboard-subtitle">Answer Engine Optimization Tracking & Management</p>
-            </div>
-        </header>
+<body class="min-h-screen">
 
-        <nav class="dashboard-nav">
-            <div class="container">
-                <div class="nav-tabs">
-                    <button class="nav-tab active" data-section="overview">Overview</button>
-                    <button class="nav-tab" data-section="visibility">AI Visibility</button>
-                    <button class="nav-tab" data-section="content">Content Performance</button>
-                    <button class="nav-tab" data-section="competitors">Competitors</button>
-                    <button class="nav-tab" data-section="optimization">Optimization</button>
-                    <button class="nav-tab" data-section="financial">Financial Model</button>
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">OpsCase <span class="text-blue-400">Pro</span></h1>
+            <div class="space-x-4 text-sm font-medium">
+                <button onclick="switchTab('dashboard')" class="hover:text-blue-300 transition">Dashboard</button>
+                <button onclick="switchTab('calculator')" class="hover:text-blue-300 transition">Calculators</button>
+                <button onclick="switchTab('process')" class="hover:text-blue-300 transition">Process Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6">
+        
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="tab-content">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-2">Case Overview: Global Logistics Optimization</h2>
+                <p class="text-slate-500">Analyze throughput, bottleneck identification, and efficiency metrics.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="card p-6 border-l-4 border-blue-500">
+                    <p class="text-sm text-slate-500 uppercase font-bold">Throughput Rate</p>
+                    <p class="text-3xl font-bold">450 <span class="text-lg font-normal text-slate-400">units/hr</span></p>
+                </div>
+                <div class="card p-6 border-l-4 border-amber-500">
+                    <p class="text-sm text-slate-500 uppercase font-bold">Bottleneck Utilization</p>
+                    <p class="text-3xl font-bold">94%</p>
+                </div>
+                <div class="card p-6 border-l-4 border-emerald-500">
+                    <p class="text-sm text-slate-500 uppercase font-bold">Cycle Time Efficiency</p>
+                    <p class="text-3xl font-bold">82.5%</p>
                 </div>
             </div>
-        </nav>
 
-        <main class="dashboard-main">
-            <div class="container">
-                <!-- Overview Section -->
-                <section id="overview" class="dashboard-section active">
-                    <div class="overview-metrics">
-                        <div class="metric-card">
-                            <h3>Overall AI Visibility</h3>
-                            <div class="metric-value">58</div>
-                            <div class="metric-change positive">+2.3%</div>
-                        </div>
-                        <div class="metric-card">
-                            <h3>Content Mentions</h3>
-                            <div class="metric-value">210</div>
-                            <div class="metric-change positive">+15%</div>
-                        </div>
-                        <div class="metric-card">
-                            <h3>Market Share</h3>
-                            <div class="metric-value">22.8%</div>
-                            <div class="metric-change positive">+4.2%</div>
-                        </div>
-                        <div class="metric-card">
-                            <h3>ROI Projection</h3>
-                            <div class="metric-value">326%</div>
-                            <div class="metric-change positive">+12%</div>
-                        </div>
-                    </div>
-
-                    <div class="overview-charts">
-                        <div class="card">
-                            <div class="card__body">
-                                <h3>AI Platform Performance Overview</h3>
-                                <div class="chart-container" style="position: relative; height: 300px;">
-                                    <canvas id="overviewChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- AI Visibility Scorecard Section -->
-                <section id="visibility" class="dashboard-section">
-                    <h2>AI Visibility Scorecard</h2>
-                    
-                    <div class="visibility-scores">
-                        <div class="score-card">
-                            <h3>ChatGPT</h3>
-                            <div class="score-gauge">
-                                <canvas id="chatgptGauge"></canvas>
-                            </div>
-                            <div class="score-details">
-                                <div class="score-item">
-                                    <span>Brand Recognition</span>
-                                    <span>8/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Market Score</span>
-                                    <span>6/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Presence Quality</span>
-                                    <span>20/25</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="score-card">
-                            <h3>Real-Time AI</h3>
-                            <div class="score-gauge">
-                                <canvas id="realtimeGauge"></canvas>
-                            </div>
-                            <div class="score-details">
-                                <div class="score-item">
-                                    <span>Brand Recognition</span>
-                                    <span>13/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Market Score</span>
-                                    <span>10/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Presence Quality</span>
-                                    <span>20/25</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="score-card">
-                            <h3>Gemini AI</h3>
-                            <div class="score-gauge">
-                                <canvas id="geminiGauge"></canvas>
-                            </div>
-                            <div class="score-details">
-                                <div class="score-item">
-                                    <span>Brand Recognition</span>
-                                    <span>5/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Market Score</span>
-                                    <span>3/15</span>
-                                </div>
-                                <div class="score-item">
-                                    <span>Presence Quality</span>
-                                    <span>20/25</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card__body">
-                            <h3>Performance Trends</h3>
-                            <div class="chart-container" style="position: relative; height: 300px;">
-                                <canvas id="trendsChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Content Performance Section -->
-                <section id="content" class="dashboard-section">
-                    <h2>Content Performance Tracker</h2>
-                    
-                    <div class="content-performance">
-                        <div class="card">
-                            <div class="card__body">
-                                <h3>Top Performing Content</h3>
-                                <div class="content-list">
-                                    <div class="content-item high">
-                                        <div class="content-info">
-                                            <h4>Global Payroll Solutions Overview</h4>
-                                            <span class="platforms">ChatGPT, Gemini</span>
-                                        </div>
-                                        <div class="content-metrics">
-                                            <span class="mentions">45 mentions</span>
-                                            <span class="status status--success">High</span>
-                                        </div>
-                                    </div>
-                                    <div class="content-item high">
-                                        <div class="content-info">
-                                            <h4>NeeyamoWorks Platform Features</h4>
-                                            <span class="platforms">Real-Time AI, ChatGPT</span>
-                                        </div>
-                                        <div class="content-metrics">
-                                            <span class="mentions">38 mentions</span>
-                                            <span class="status status--success">High</span>
-                                        </div>
-                                    </div>
-                                    <div class="content-item high">
-                                        <div class="content-info">
-                                            <h4>Compliance and Risk Management</h4>
-                                            <span class="platforms">All Platforms</span>
-                                        </div>
-                                        <div class="content-metrics">
-                                            <span class="mentions">42 mentions</span>
-                                            <span class="status status--success">High</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card__body">
-                                <h3>Gap Analysis - Missed Opportunities</h3>
-                                <div class="chart-container" style="position: relative; height: 300px;">
-                                    <canvas id="gapChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Competitor Benchmarking Section -->
-                <section id="competitors" class="dashboard-section">
-                    <h2>Competitor Benchmarking</h2>
-                    
-                    <div class="competitor-tabs">
-                        <button class="competitor-tab active" data-platform="ChatGPT">ChatGPT</button>
-                        <button class="competitor-tab" data-platform="Real_Time_AI">Real-Time AI</button>
-                        <button class="competitor-tab" data-platform="Gemini_AI">Gemini AI</button>
-                    </div>
-
-                    <div class="competitor-content">
-                        <div class="card">
-                            <div class="card__body">
-                                <h3>Market Share Comparison</h3>
-                                <div class="chart-container" style="position: relative; height: 300px;">
-                                    <canvas id="marketShareChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card__body">
-                                <h3>Competitive Keywords Ranking</h3>
-                                <div class="keywords-table">
-                                    <div class="keyword-row header">
-                                        <span>Keyword</span>
-                                        <span>Neeyamo Rank</span>
-                                        <span>Top Competitor</span>
-                                        <span>Competitor Rank</span>
-                                    </div>
-                                    <div class="keyword-row">
-                                        <span>Global payroll services</span>
-                                        <span class="rank rank-3">3</span>
-                                        <span>ADP</span>
-                                        <span class="rank rank-1">1</span>
-                                    </div>
-                                    <div class="keyword-row">
-                                        <span>International HR outsourcing</span>
-                                        <span class="rank rank-2">2</span>
-                                        <span>Deel</span>
-                                        <span class="rank rank-1">1</span>
-                                    </div>
-                                    <div class="keyword-row">
-                                        <span>Payroll compliance automation</span>
-                                        <span class="rank rank-4">4</span>
-                                        <span>ADP</span>
-                                        <span class="rank rank-1">1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- AEO Optimization Section -->
-                <section id="optimization" class="dashboard-section">
-                    <h2>AEO Optimization Insights</h2>
-                    
-                    <div class="optimization-metrics">
-                        <div class="metric-item">
-                            <span>FAQ Schema Implementation</span>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 65%"></div>
-                            </div>
-                            <span>65%</span>
-                        </div>
-                        <div class="metric-item">
-                            <span>NLP Friendliness</span>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 72%"></div>
-                            </div>
-                            <span>72%</span>
-                        </div>
-                        <div class="metric-item">
-                            <span>Structured Data Coverage</span>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 58%"></div>
-                            </div>
-                            <span>58%</span>
-                        </div>
-                        <div class="metric-item">
-                            <span>Content Authority Score</span>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 74%"></div>
-                            </div>
-                            <span>74%</span>
-                        </div>
-                    </div>
-
-                    <div class="optimization-recommendations">
-                        <div class="recommendation-card high-priority">
-                            <div class="recommendation-header">
-                                <h3>Schema Implementation</h3>
-                                <span class="priority high">High Priority</span>
-                            </div>
-                            <p>Implement FAQ schema on 15 key service pages</p>
-                            <div class="recommendation-metrics">
-                                <span class="impact">25% visibility increase</span>
-                                <span class="timeline">2-4 weeks</span>
-                                <span class="cost">$2,000</span>
-                            </div>
-                        </div>
-
-                        <div class="recommendation-card high-priority">
-                            <div class="recommendation-header">
-                                <h3>Content Structure</h3>
-                                <span class="priority high">High Priority</span>
-                            </div>
-                            <p>Restructure content with clear Q&A format</p>
-                            <div class="recommendation-metrics">
-                                <span class="impact">20% visibility increase</span>
-                                <span class="timeline">4-6 weeks</span>
-                                <span class="cost">$5,000</span>
-                            </div>
-                        </div>
-
-                        <div class="recommendation-card medium-priority">
-                            <div class="recommendation-header">
-                                <h3>Authority Building</h3>
-                                <span class="priority medium">Medium Priority</span>
-                            </div>
-                            <p>Create industry-specific case studies</p>
-                            <div class="recommendation-metrics">
-                                <span class="impact">15% visibility increase</span>
-                                <span class="timeline">6-8 weeks</span>
-                                <span class="cost">$8,000</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Financial Model Section -->
-                <section id="financial" class="dashboard-section">
-                    <h2>Financial Model & ROI Simulator</h2>
-                    
-                    <div class="scenario-selector">
-                        <button class="scenario-btn" data-scenario="Conservative">Conservative</button>
-                        <button class="scenario-btn active" data-scenario="Moderate">Moderate</button>
-                        <button class="scenario-btn" data-scenario="Optimistic">Optimistic</button>
-                    </div>
-
-                    <div class="financial-metrics">
-                        <div class="financial-card">
-                            <h3>Monthly Investment</h3>
-                            <div class="financial-value">$5,000</div>
-                        </div>
-                        <div class="financial-card">
-                            <h3 id="scenarioTitle">Monthly Revenue (Moderate)</h3>
-                            <div class="financial-value" id="monthlyRevenue">$210,000</div>
-                        </div>
-                        <div class="financial-card">
-                            <h3>12-Month ROI</h3>
-                            <div class="financial-value" id="roiValue">326%</div>
-                        </div>
-                        <div class="financial-card">
-                            <h3>Payback Period</h3>
-                            <div class="financial-value">2.3 months</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card__body">
-                            <h3>ROI Projection Analysis</h3>
-                            <div class="chart-container" style="position: relative; height: 300px;">
-                                <canvas id="roiChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <footer class="dashboard-footer">
-            <div class="container">
-                <div class="footer-actions">
-                    <button class="btn btn--outline" onclick="window.print()">Print Report</button>
-                    <button class="btn btn--primary" id="exportBtn">Export Data</button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card p-6">
+                    <h3 class="font-bold mb-4 border-bottom pb-2">Analysis Notes</h3>
+                    <textarea id="caseNotes" class="w-full h-64 p-3 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your case findings here..."></textarea>
+                    <button onclick="saveNotes()" class="mt-4 bg-slate-800 text-white px-4 py-2 rounded-md hover:bg-slate-700">Save Observations</button>
                 </div>
-                <p>&copy; 2025 Neeyamo. AEO Dashboard v1.0</p>
+                <div class="card p-6">
+                    <h3 class="font-bold mb-4">Problem Statements</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 p-1 rounded">1</span>
+                            <p class="text-sm">Inbound sorting takes 40% longer than outbound staging.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 p-1 rounded">2</span>
+                            <p class="text-sm">Wait times between Station B and C average 12 minutes.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 p-1 rounded">3</span>
+                            <p class="text-sm">Quality control rejects have increased by 5% this quarter.</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <script src="app.js"></script>
+        <!-- Calculator Section -->
+        <section id="calculator" class="tab-content hidden">
+            <h2 class="text-2xl font-bold mb-6">Operations Toolkit</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Takt Time Calc -->
+                <div class="card p-6">
+                    <h3 class="font-bold text-blue-600 mb-4 uppercase text-xs tracking-widest">Takt Time Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm mb-1">Available Work Time (min)</label>
+                            <input type="number" id="workTime" class="w-full p-2 border rounded" value="480">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">Customer Demand (units)</label>
+                            <input type="number" id="demand" class="w-full p-2 border rounded" value="120">
+                        </div>
+                        <button onclick="calcTakt()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
+                        <div id="taktResult" class="p-3 bg-blue-50 rounded text-center font-bold text-blue-800 hidden"></div>
+                    </div>
+                </div>
+
+                <!-- ROI Calc -->
+                <div class="card p-6">
+                    <h3 class="font-bold text-emerald-600 mb-4 uppercase text-xs tracking-widest">Automation ROI</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm mb-1">Investment Cost ($)</label>
+                            <input type="number" id="cost" class="w-full p-2 border rounded" value="50000">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">Annual Savings ($)</label>
+                            <input type="number" id="savings" class="w-full p-2 border rounded" value="15000">
+                        </div>
+                        <button onclick="calcROI()" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700">Calculate</button>
+                        <div id="roiResult" class="p-3 bg-emerald-50 rounded text-center font-bold text-emerald-800 hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Map Section -->
+        <section id="process" class="tab-content hidden">
+            <h2 class="text-2xl font-bold mb-6">Process Visualizer</h2>
+            <div class="card p-8 flex flex-col items-center">
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <div class="p-4 bg-slate-100 border-2 border-slate-300 rounded text-center">
+                        <span class="text-xs font-bold block">STEP 1</span>
+                        Inbound
+                    </div>
+                    <div class="text-slate-400">➔</div>
+                    <div class="p-4 bg-blue-100 border-2 border-blue-300 rounded text-center shadow-lg">
+                        <span class="text-xs font-bold block">STEP 2</span>
+                        Sorting (BOTTLENECK)
+                    </div>
+                    <div class="text-slate-400">➔</div>
+                    <div class="p-4 bg-slate-100 border-2 border-slate-300 rounded text-center">
+                        <span class="text-xs font-bold block">STEP 3</span>
+                        Staging
+                    </div>
+                    <div class="text-slate-400">➔</div>
+                    <div class="p-4 bg-slate-100 border-2 border-slate-300 rounded text-center">
+                        <span class="text-xs font-bold block">STEP 4</span>
+                        Shipping
+                    </div>
+                </div>
+                <p class="mt-8 text-sm text-slate-500 italic max-w-md text-center">
+                    Visual representation of the physical flow. Highlighted blue box indicates the identified primary constraint (Station 2).
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        function calcTakt() {
+            const time = document.getElementById('workTime').value;
+            const demand = document.getElementById('demand').value;
+            const result = (time / demand).toFixed(2);
+            const el = document.getElementById('taktResult');
+            el.innerText = `Takt Time: ${result} minutes per unit`;
+            el.classList.remove('hidden');
+        }
+
+        function calcROI() {
+            const cost = document.getElementById('cost').value;
+            const savings = document.getElementById('savings').value;
+            const roi = ((savings / cost) * 100).toFixed(1);
+            const payback = (cost / savings).toFixed(1);
+            const el = document.getElementById('roiResult');
+            el.innerText = `ROI: ${roi}% | Payback: ${payback} years`;
+            el.classList.remove('hidden');
+        }
+
+        function saveNotes() {
+            const notes = document.getElementById('caseNotes').value;
+            // In a real app, this would save to a database
+            const statusBox = document.createElement('div');
+            statusBox.className = "fixed bottom-4 right-4 bg-slate-800 text-white px-4 py-2 rounded-lg shadow-xl animate-bounce";
+            statusBox.innerText = "Progress Saved Locally!";
+            document.body.appendChild(statusBox);
+            setTimeout(() => statusBox.remove(), 3000);
+        }
+    </script>
 </body>
 </html>
